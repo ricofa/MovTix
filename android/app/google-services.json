@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "911560834526",
+    "project_id": "mov-tix-4ab6d",
+    "storage_bucket": "mov-tix-4ab6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911560834526:android:ff09a205565a48a18a714f",
+        "android_client_info": {
+          "package_name": "com.example.mov_tix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911560834526-v955jh9s0lda1tqum6m98eo3mm9d8dk4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBt5yTWrdVKRq564uZh3RlRjVeh2eB_U8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911560834526-v955jh9s0lda1tqum6m98eo3mm9d8dk4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
