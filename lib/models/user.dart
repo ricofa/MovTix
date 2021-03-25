@@ -11,20 +11,24 @@ class User extends Equatable {
 
   User(this.id, this.email,
       {this.name,
-      this.profilePicture,
-      this.selectedGenres,
-      this.selectedLanguage,
-      this.balance});
+        this.profilePicture,
+        this.balance,
+        this.selectedGenres,
+        this.selectedLanguage});
 
   @override
-  // TODO: implement props
+  String toString() {
+    return "[$id] - $name, $email";
+  }
+
+  @override
   List<Object> get props => [
-        id,
-        name,
-        email,
-        profilePicture,
-        selectedGenres,
-        selectedLanguage,
-        balance
-      ];
+    id,
+    email,
+    name,
+    profilePicture,
+    selectedGenres,
+    selectedLanguage,
+    balance
+  ];
 }
