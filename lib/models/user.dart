@@ -11,10 +11,18 @@ class User extends Equatable {
 
   User(this.id, this.email,
       {this.name,
-        this.profilePicture,
-        this.balance,
-        this.selectedGenres,
-        this.selectedLanguage});
+      this.profilePicture,
+      this.balance,
+      this.selectedGenres,
+      this.selectedLanguage});
+
+  User copyWith({String name, String profilePicture, int balance}) =>
+      User(this.id, this.email,
+          name: name ?? this.name,
+          profilePicture: profilePicture ?? this.profilePicture,
+          balance: balance ?? this.balance,
+          selectedGenres: selectedGenres,
+          selectedLanguage: selectedLanguage);
 
   @override
   String toString() {
@@ -23,12 +31,12 @@ class User extends Equatable {
 
   @override
   List<Object> get props => [
-    id,
-    email,
-    name,
-    profilePicture,
-    selectedGenres,
-    selectedLanguage,
-    balance
-  ];
+        id,
+        email,
+        name,
+        profilePicture,
+        selectedGenres,
+        selectedLanguage,
+        balance
+      ];
 }

@@ -6,12 +6,12 @@ class Wrapper extends StatelessWidget {
     FirebaseUser firebaseUser = Provider.of<FirebaseUser>(context);
 
     if (firebaseUser == null) {
-      if(!(prevPageEvent is GoToSplashPage)){
+      if (!(prevPageEvent is GoToSplashPage)) {
         prevPageEvent = GoToSplashPage();
         context.bloc<PageBloc>().add(prevPageEvent);
       }
     } else {
-      if(!(prevPageEvent is GoToMainPage)){
+      if (!(prevPageEvent is GoToMainPage)) {
         context.bloc<UserBloc>().add(LoadUser(firebaseUser.uid));
 
         prevPageEvent = GoToMainPage();
@@ -24,6 +24,18 @@ class Wrapper extends StatelessWidget {
             ? SplashPage()
             : (pageState is OnLoginPage)
                 ? SignInPage()
-                : MainPage());
+                : (pageState is OnRegisterPage)
+                    ? SignUpPage(pageState.registerModel)
+                    : (pageState is OnPreferencePage)
+                        ? PreferencePage(pageState.registerModel)
+                        : (pageState is OnConfirmationAccountPage)
+                            ? ConfirmationAccountPage(pageState.registerModel)
+                            : (pageState is OnMovieDetailPage)
+                                ? MovieDetailPage(pageState.movieModel)
+                                : (pageState is OnSelectSchedulePage)
+                                    ? SelectSchedulePage(pageState.movieDetail)
+                                    : (pageState is OnSelectSeatPage)
+                                        ? SelectSeatPage(pageState.ticket)
+                                        : MainPage());
   }
 }

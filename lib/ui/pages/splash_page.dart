@@ -42,7 +42,9 @@ class SplashPage extends StatelessWidget {
                   color: mainColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8)),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.bloc<PageBloc>().add(GoToRegisterPage(RegisterModel()));
+                  },
                 ),
               ),
               Row(
